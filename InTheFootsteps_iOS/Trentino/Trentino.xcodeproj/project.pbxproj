@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A1A7E3B1ADD4B6000B5A74A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A7E3A1ADD4B6000B5A74A /* Character.swift */; };
+		4A2009061B067A3A00A5FD2B /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2009051B067A3A00A5FD2B /* HelpViewController.swift */; };
+		4A2009091B067B1300A5FD2B /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A2009071B067B1300A5FD2B /* Roboto-Bold.ttf */; };
+		4A20090A1B067B1300A5FD2B /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A2009081B067B1300A5FD2B /* Roboto-Light.ttf */; };
+		4A8539321ACC11C2004CCA97 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8539311ACC11C2004CCA97 /* MapKit.framework */; };
+		4A8E25451AD5967D00B5DD36 /* CreditsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E25441AD5967D00B5DD36 /* CreditsTableViewController.swift */; };
+		4A9284951ACAF2CB00081515 /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9284941ACAF2CB00081515 /* CharactersTableViewController.swift */; };
+		4A9284971ACAF39500081515 /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9284961ACAF39500081515 /* CharactersTableViewCell.swift */; };
+		4A9284991ACB396100081515 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9284981ACB396100081515 /* CharacterDetailViewController.swift */; };
+		4ACC139E1ACAEC310066F7DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC139D1ACAEC310066F7DE /* AppDelegate.swift */; };
+		4ACC13A31ACAEC310066F7DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC13A11ACAEC310066F7DE /* Main.storyboard */; };
+		4ACC13A51ACAEC310066F7DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC13A41ACAEC310066F7DE /* Images.xcassets */; };
+		4ACC13A81ACAEC310066F7DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC13A61ACAEC310066F7DE /* LaunchScreen.xib */; };
+		4ACC13B41ACAEC310066F7DE /* TrentinoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC13B31ACAEC310066F7DE /* TrentinoTests.swift */; };
+		4ADFC81C1AD8154F005AB98B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADFC81B1AD8154F005AB98B /* MapViewController.swift */; };
+		A2ACDB58AFF927210DAE9C68 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E3952FA34ABCA16B19EA1BD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ACC13AE1ACAEC310066F7DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ACC13901ACAEC310066F7DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ACC13971ACAEC310066F7DE;
+			remoteInfo = Trentino;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A1A7E3A1ADD4B6000B5A74A /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		4A2009051B067A3A00A5FD2B /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		4A2009071B067B1300A5FD2B /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		4A2009081B067B1300A5FD2B /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		4A8539311ACC11C2004CCA97 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4A8E25441AD5967D00B5DD36 /* CreditsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsTableViewController.swift; sourceTree = "<group>"; };
+		4A9284941ACAF2CB00081515 /* CharactersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
+		4A9284961ACAF39500081515 /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
+		4A9284981ACB396100081515 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		4ACC13981ACAEC310066F7DE /* Trentino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trentino.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ACC139C1ACAEC310066F7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ACC139D1ACAEC310066F7DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4ACC13A21ACAEC310066F7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4ACC13A41ACAEC310066F7DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4ACC13A71ACAEC310066F7DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4ACC13AD1ACAEC310066F7DE /* TrentinoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrentinoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ACC13B21ACAEC310066F7DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ACC13B31ACAEC310066F7DE /* TrentinoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrentinoTests.swift; sourceTree = "<group>"; };
+		4ADFC81B1AD8154F005AB98B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9E3952FA34ABCA16B19EA1BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8FC2CE915434BA243AEB663 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DABE1AF234905B0F63D1CBF4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4ACC13951ACAEC310066F7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A8539321ACC11C2004CCA97 /* MapKit.framework in Frameworks */,
+				A2ACDB58AFF927210DAE9C68 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ACC13AA1ACAEC310066F7DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C09FF73024AB19AF13E3456 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A8539311ACC11C2004CCA97 /* MapKit.framework */,
+				9E3952FA34ABCA16B19EA1BD /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4ACC138F1ACAEC310066F7DE = {
+			isa = PBXGroup;
+			children = (
+				4ACC139A1ACAEC310066F7DE /* Trentino */,
+				4ACC13B01ACAEC310066F7DE /* TrentinoTests */,
+				4ACC13991ACAEC310066F7DE /* Products */,
+				B5A48BA5F27855DF0973EA99 /* Pods */,
+				0C09FF73024AB19AF13E3456 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4ACC13991ACAEC310066F7DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4ACC13981ACAEC310066F7DE /* Trentino.app */,
+				4ACC13AD1ACAEC310066F7DE /* TrentinoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4ACC139A1ACAEC310066F7DE /* Trentino */ = {
+			isa = PBXGroup;
+			children = (
+				4A1A7E3A1ADD4B6000B5A74A /* Character.swift */,
+				4ACC139D1ACAEC310066F7DE /* AppDelegate.swift */,
+				4A8E25441AD5967D00B5DD36 /* CreditsTableViewController.swift */,
+				4A9284941ACAF2CB00081515 /* CharactersTableViewController.swift */,
+				4A9284961ACAF39500081515 /* CharactersTableViewCell.swift */,
+				4A9284981ACB396100081515 /* CharacterDetailViewController.swift */,
+				4A2009051B067A3A00A5FD2B /* HelpViewController.swift */,
+				4ADFC81B1AD8154F005AB98B /* MapViewController.swift */,
+				4ACC13A11ACAEC310066F7DE /* Main.storyboard */,
+				4ACC13A41ACAEC310066F7DE /* Images.xcassets */,
+				4ACC13A61ACAEC310066F7DE /* LaunchScreen.xib */,
+				4ACC139B1ACAEC310066F7DE /* Supporting Files */,
+			);
+			path = Trentino;
+			sourceTree = "<group>";
+		};
+		4ACC139B1ACAEC310066F7DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A2009071B067B1300A5FD2B /* Roboto-Bold.ttf */,
+				4A2009081B067B1300A5FD2B /* Roboto-Light.ttf */,
+				4ACC139C1ACAEC310066F7DE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ACC13B01ACAEC310066F7DE /* TrentinoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4ACC13B31ACAEC310066F7DE /* TrentinoTests.swift */,
+				4ACC13B11ACAEC310066F7DE /* Supporting Files */,
+			);
+			path = TrentinoTests;
+			sourceTree = "<group>";
+		};
+		4ACC13B11ACAEC310066F7DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ACC13B21ACAEC310066F7DE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5A48BA5F27855DF0973EA99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8FC2CE915434BA243AEB663 /* Pods.debug.xcconfig */,
+				DABE1AF234905B0F63D1CBF4 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4ACC13971ACAEC310066F7DE /* Trentino */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ACC13B71ACAEC310066F7DE /* Build configuration list for PBXNativeTarget "Trentino" */;
+			buildPhases = (
+				D58D03DDC1B32ED3C45DFDFE /* Check Pods Manifest.lock */,
+				4ACC13941ACAEC310066F7DE /* Sources */,
+				4ACC13951ACAEC310066F7DE /* Frameworks */,
+				4ACC13961ACAEC310066F7DE /* Resources */,
+				BBC9577C7E005E65E4802864 /* Embed Pods Frameworks */,
+				D6D958B49A7345BCCEFB44B9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trentino;
+			productName = Trentino;
+			productReference = 4ACC13981ACAEC310066F7DE /* Trentino.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4ACC13AC1ACAEC310066F7DE /* TrentinoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ACC13BA1ACAEC310066F7DE /* Build configuration list for PBXNativeTarget "TrentinoTests" */;
+			buildPhases = (
+				4ACC13A91ACAEC310066F7DE /* Sources */,
+				4ACC13AA1ACAEC310066F7DE /* Frameworks */,
+				4ACC13AB1ACAEC310066F7DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ACC13AF1ACAEC310066F7DE /* PBXTargetDependency */,
+			);
+			name = TrentinoTests;
+			productName = TrentinoTests;
+			productReference = 4ACC13AD1ACAEC310066F7DE /* TrentinoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4ACC13901ACAEC310066F7DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Vito Bellini";
+				TargetAttributes = {
+					4ACC13971ACAEC310066F7DE = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3DZ42NSTD3;
+					};
+					4ACC13AC1ACAEC310066F7DE = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3DZ42NSTD3;
+						TestTargetID = 4ACC13971ACAEC310066F7DE;
+					};
+				};
+			};
+			buildConfigurationList = 4ACC13931ACAEC310066F7DE /* Build configuration list for PBXProject "Trentino" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4ACC138F1ACAEC310066F7DE;
+			productRefGroup = 4ACC13991ACAEC310066F7DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4ACC13971ACAEC310066F7DE /* Trentino */,
+				4ACC13AC1ACAEC310066F7DE /* TrentinoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4ACC13961ACAEC310066F7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ACC13A31ACAEC310066F7DE /* Main.storyboard in Resources */,
+				4ACC13A81ACAEC310066F7DE /* LaunchScreen.xib in Resources */,
+				4A20090A1B067B1300A5FD2B /* Roboto-Light.ttf in Resources */,
+				4A2009091B067B1300A5FD2B /* Roboto-Bold.ttf in Resources */,
+				4ACC13A51ACAEC310066F7DE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ACC13AB1ACAEC310066F7DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BBC9577C7E005E65E4802864 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D58D03DDC1B32ED3C45DFDFE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D6D958B49A7345BCCEFB44B9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4ACC13941ACAEC310066F7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A9284971ACAF39500081515 /* CharactersTableViewCell.swift in Sources */,
+				4ADFC81C1AD8154F005AB98B /* MapViewController.swift in Sources */,
+				4A1A7E3B1ADD4B6000B5A74A /* Character.swift in Sources */,
+				4A2009061B067A3A00A5FD2B /* HelpViewController.swift in Sources */,
+				4A8E25451AD5967D00B5DD36 /* CreditsTableViewController.swift in Sources */,
+				4A9284991ACB396100081515 /* CharacterDetailViewController.swift in Sources */,
+				4ACC139E1ACAEC310066F7DE /* AppDelegate.swift in Sources */,
+				4A9284951ACAF2CB00081515 /* CharactersTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ACC13A91ACAEC310066F7DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ACC13B41ACAEC310066F7DE /* TrentinoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ACC13AF1ACAEC310066F7DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ACC13971ACAEC310066F7DE /* Trentino */;
+			targetProxy = 4ACC13AE1ACAEC310066F7DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4ACC13A11ACAEC310066F7DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ACC13A21ACAEC310066F7DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4ACC13A61ACAEC310066F7DE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ACC13A71ACAEC310066F7DE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4ACC13B51ACAEC310066F7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "6bebd06c-5690-4fda-a1d3-6b761e401627";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4ACC13B61ACAEC310066F7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "8e35361e-585c-42a4-a5fd-9a0ab541ea7c";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4ACC13B81ACAEC310066F7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8FC2CE915434BA243AEB663 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Trentino/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6bebd06c-5690-4fda-a1d3-6b761e401627";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4ACC13B91ACAEC310066F7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DABE1AF234905B0F63D1CBF4 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				INFOPLIST_FILE = Trentino/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8e35361e-585c-42a4-a5fd-9a0ab541ea7c";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4ACC13BB1ACAEC310066F7DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TrentinoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trentino.app/Trentino";
+			};
+			name = Debug;
+		};
+		4ACC13BC1ACAEC310066F7DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TrentinoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trentino.app/Trentino";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4ACC13931ACAEC310066F7DE /* Build configuration list for PBXProject "Trentino" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ACC13B51ACAEC310066F7DE /* Debug */,
+				4ACC13B61ACAEC310066F7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ACC13B71ACAEC310066F7DE /* Build configuration list for PBXNativeTarget "Trentino" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ACC13B81ACAEC310066F7DE /* Debug */,
+				4ACC13B91ACAEC310066F7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ACC13BA1ACAEC310066F7DE /* Build configuration list for PBXNativeTarget "TrentinoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ACC13BB1ACAEC310066F7DE /* Debug */,
+				4ACC13BC1ACAEC310066F7DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4ACC13901ACAEC310066F7DE /* Project object */;
+}

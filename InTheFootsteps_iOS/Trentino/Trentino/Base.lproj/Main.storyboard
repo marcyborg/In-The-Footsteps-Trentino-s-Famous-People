@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NE2-za-MEg">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Help-->
+        <scene sceneID="Nr4-gf-XQS">
+            <objects>
+                <viewController title="Help" id="wUI-lm-IKx" customClass="HelpViewController" customModule="Trentino" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i4m-GR-aSx"/>
+                        <viewControllerLayoutGuide type="bottom" id="z20-iV-p2b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9gf-bg-VPP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMe-FS-uqT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">L'applicazione In The Footsteps: Trentino's Famous People ha l'obiettivo di reperire informazioni sui luoghi d'interesse legati ai personaggi Storici del Trentino. L'app non si limita a definire solo elementi culturali e biografici del personaggio, ma ha l'intento di fornire una completa esperienza sul territorio con cui entrare in contatto, offrendo, tra le altre cose, informazioni sui migliori luoghi di ristoro e di soggiorno presenti in tutta la Regione del Trentino. 
+L'applicazione si compone di tre schermate principali, collegate tra di loro e logicamente connesse. La schermata di avvio si compone di una lista contenente tutti i personaggi storici del Trentino, ottenuti dal Dataset Historical Characters; per facilitare la ricerca del personaggio desiderato, è presente anche una barra di ricerca in cui ricercare uno specifico personaggio. A ogni personaggio presente nella lista è associata un'icona, che rappresenta le varie categorie di appartenenza: 
+
+• none, categoria sconosciuta;
+• chiesa, categoria ecclesiastica;
+• penna, categoria scrittore;
+• arte, categoria artistica;
+• nobile, categoria nobiltà;
+• parlamento, categoria politica.
+
+Cliccando su uno dei personaggi della lista, è possibile accedere alla seconda schermata, contenente un'esauriente descrizione del personaggio selezionato; in questa schermata è possibile trovare, oltre al nome e alla categoria d'appartenenza, un pulsante "Visualizza Mappa" che permette di accedere alla terza schermata dell'applicazione. In quest'ultima, l'obiettivo è di geolocalizzare le informazioni contenute nella scheda descrittiva del singolo personaggio, visualizzabili mediante una mappa. Uno degli aspetti fondamentali di quest'applicazione è unire elementi d’interesse storico, legati alle città nelle quali il personaggio storico ha vissuto o in cui ha soggiornato, con l'attuale conformazione territoriale di tali luoghi. Per realizzare tale idea, sono stati inseriti nella parte superiore della schermata quattro bottoni, identificati da quattro icone, che permettono di visualizzare in mappa le seguenti informazioni:
+
+• Città, nelle quali il personaggio storico ha vissuto/soggiornato;
+• POI (Punti d'Interesse), ottenuti dai Dataset POI e Architectural and Artistic Heritage, identificanti tutti gli edifici appartenenti al patrimonio artistico delle città;
+• Ristoranti, ottenuti dal Dataset Restaurants, arricchiti con un rating proveniente dalla piattaforma Yelp, oltre a fornire ulteriori informazioni quali indirizzo, telefono, orari ecc.;
+• Hotel, ottenuti interamente dalla piattaforma Yelp, con le stesse caratteristiche illustrate precedentemente per i Ristoranti.
+
+Cliccando su ogni singola icona, sarà possibile visualizzare in mappa i marker relativi alla ricerca effettuata; cliccando su ogni singolo marker, sarà possibile visualizzare le informazioni relative all'entità selezionata. Da ogni marker, è possibile sfruttare la geolocalizzazione, per calcolare l'itinerario verso il marker selezionato, dalla propria posizione.</mutableString>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sMe-FS-uqT" firstAttribute="top" secondItem="i4m-GR-aSx" secondAttribute="bottom" id="3kf-zs-oX6"/>
+                            <constraint firstAttribute="trailing" secondItem="sMe-FS-uqT" secondAttribute="trailing" id="62S-aC-dF5"/>
+                            <constraint firstItem="sMe-FS-uqT" firstAttribute="leading" secondItem="9gf-bg-VPP" secondAttribute="leading" id="Eau-Z8-R7M"/>
+                            <constraint firstItem="z20-iV-p2b" firstAttribute="top" secondItem="sMe-FS-uqT" secondAttribute="bottom" id="Xpm-XH-l6Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="sMe-FS-uqT" id="BR6-XS-bcG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mE9-Z3-SgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="-861"/>
+        </scene>
+        <!--CharactersTableViewController-->
+        <scene sceneID="STz-mP-F7J">
+            <objects>
+                <tableViewController id="UFX-m7-LjV" userLabel="CharactersTableViewController" customClass="CharactersTableViewController" customModule="Trentino" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RTQ-5E-k4a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="MPy-cJ-rgf" customClass="CharactersTableViewCell" customModule="Trentino" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MPy-cJ-rgf" id="sLh-p6-q2v">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-bL-zcM">
+                                            <rect key="frame" x="8" y="5" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="jVT-Ap-zaR"/>
+                                                <constraint firstAttribute="width" constant="50" id="qz1-ct-tUT"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slc-YV-RE4">
+                                            <rect key="frame" x="66" y="15" width="485" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="Q4F-vM-UEg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="Slc-YV-RE4" secondAttribute="centerY" id="CLp-Ac-3rF"/>
+                                        <constraint firstAttribute="centerY" secondItem="Slc-YV-RE4" secondAttribute="centerY" constant="-0.5" id="IBk-4P-8K9"/>
+                                        <constraint firstItem="aKQ-bL-zcM" firstAttribute="leading" secondItem="sLh-p6-q2v" secondAttribute="leadingMargin" id="O5H-SZ-1yK"/>
+                                        <constraint firstItem="Slc-YV-RE4" firstAttribute="leading" secondItem="aKQ-bL-zcM" secondAttribute="trailing" constant="8" id="Vgi-vs-bw1"/>
+                                        <constraint firstAttribute="centerY" secondItem="aKQ-bL-zcM" secondAttribute="centerY" constant="-0.5" id="vhm-n1-lfc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Slc-YV-RE4" secondAttribute="trailing" constant="8" id="xgH-Nr-7Mf"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="CLp-Ac-3rF"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatar" destination="aKQ-bL-zcM" id="x63-95-ejn"/>
+                                    <outlet property="nameLabel" destination="Slc-YV-RE4" id="HpP-au-NQx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UFX-m7-LjV" id="P4W-os-w93"/>
+                            <outlet property="delegate" destination="UFX-m7-LjV" id="65e-Iw-KlZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="gmV-Vy-vVi">
+                        <barButtonItem key="leftBarButtonItem" title="Help" id="wib-wt-Bs3">
+                            <connections>
+                                <segue destination="wUI-lm-IKx" kind="show" id="ARg-CM-wac"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Credits" id="oWQ-BP-sba">
+                            <connections>
+                                <segue destination="qaZ-cj-krd" kind="show" id="YMp-3d-zyu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="p0D-tl-Kp6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                    <connections>
+                        <segue destination="aWI-L6-5cl" kind="show" identifier="detail" id="rEW-gR-PXk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMn-V6-yeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="-141"/>
+        </scene>
+        <!--Credits Table View Controller-->
+        <scene sceneID="5U8-gI-llw">
+            <objects>
+                <tableViewController id="qaZ-cj-krd" customClass="CreditsTableViewController" customModule="Trentino" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qb8-RW-OGr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="d9x-89-bgw" detailTextLabel="gub-9G-UJA" style="IBUITableViewCellStyleSubtitle" id="8aZ-Wm-odW">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8aZ-Wm-odW" id="Ta1-I6-drc">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d9x-89-bgw">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gub-9G-UJA">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qaZ-cj-krd" id="ETt-Ct-X8v"/>
+                            <outlet property="delegate" destination="qaZ-cj-krd" id="166-eC-id7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vcF-WR-smI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413" y="-949"/>
+        </scene>
+        <!--Character Detail View Controller-->
+        <scene sceneID="r4M-z2-aCC">
+            <objects>
+                <viewController id="aWI-L6-5cl" customClass="CharacterDetailViewController" customModule="Trentino" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AO4-7T-iij"/>
+                        <viewControllerLayoutGuide type="bottom" id="RKl-vt-TY3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LCb-F0-08C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZf-z6-Ty4">
+                                <rect key="frame" x="0.0" y="59" width="600" height="469"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ma-rI-Jbe">
+                                <rect key="frame" x="16" y="8" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="O2R-LH-wmr"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RKl-vt-TY3" firstAttribute="top" secondItem="GZf-z6-Ty4" secondAttribute="bottom" constant="8" id="2B5-Ki-h8s"/>
+                            <constraint firstItem="8ma-rI-Jbe" firstAttribute="top" secondItem="AO4-7T-iij" secondAttribute="bottom" constant="8" id="2uX-Mg-OVp"/>
+                            <constraint firstItem="GZf-z6-Ty4" firstAttribute="leading" secondItem="LCb-F0-08C" secondAttribute="leading" id="ChP-al-B4b"/>
+                            <constraint firstItem="GZf-z6-Ty4" firstAttribute="top" secondItem="8ma-rI-Jbe" secondAttribute="bottom" constant="30" id="Mbg-kT-Wsn"/>
+                            <constraint firstItem="8ma-rI-Jbe" firstAttribute="trailing" secondItem="LCb-F0-08C" secondAttribute="trailingMargin" id="SCh-wD-I5a"/>
+                            <constraint firstAttribute="trailing" secondItem="GZf-z6-Ty4" secondAttribute="trailing" id="XMU-kn-E4g"/>
+                            <constraint firstItem="8ma-rI-Jbe" firstAttribute="leading" secondItem="LCb-F0-08C" secondAttribute="leadingMargin" id="p1s-bb-8f6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailTextView" destination="GZf-z6-Ty4" id="MUc-h8-Qfd"/>
+                        <outlet property="lifeLabel" destination="8ma-rI-Jbe" id="tuY-dZ-ii8"/>
+                        <segue destination="TTq-2w-f9h" kind="show" identifier="map" id="GOu-wq-R0D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vSz-8J-uwj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413" y="-141"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="H3C-1U-uBR">
+            <objects>
+                <viewController id="TTq-2w-f9h" customClass="MapViewController" customModule="Trentino" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I0s-sG-TKl"/>
+                        <viewControllerLayoutGuide type="bottom" id="niv-Gb-F6F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WuU-ed-8aP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBQ-uV-vkb">
+                                <rect key="frame" x="0.0" y="28" width="600" height="508"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TTq-2w-f9h" id="6L9-C1-GjK"/>
+                                </connections>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ywn-80-9xc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="sW1-xk-kA6"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Città"/>
+                                    <segment title="POI"/>
+                                    <segment title="Ristoranti"/>
+                                    <segment title="Hotel"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="TTq-2w-f9h" eventType="valueChanged" id="YAw-dk-Qaz"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="niv-Gb-F6F" firstAttribute="top" secondItem="eBQ-uV-vkb" secondAttribute="bottom" id="BAh-YZ-0cQ"/>
+                            <constraint firstItem="ywn-80-9xc" firstAttribute="top" secondItem="I0s-sG-TKl" secondAttribute="bottom" id="GhA-FN-u3R"/>
+                            <constraint firstItem="eBQ-uV-vkb" firstAttribute="leading" secondItem="WuU-ed-8aP" secondAttribute="leading" id="TqO-7B-T1j"/>
+                            <constraint firstAttribute="trailing" secondItem="eBQ-uV-vkb" secondAttribute="trailing" id="Yz6-lh-Qcc"/>
+                            <constraint firstAttribute="trailing" secondItem="ywn-80-9xc" secondAttribute="trailing" id="f3K-98-jOQ"/>
+                            <constraint firstItem="eBQ-uV-vkb" firstAttribute="top" secondItem="ywn-80-9xc" secondAttribute="bottom" id="m5B-ld-4on"/>
+                            <constraint firstItem="ywn-80-9xc" firstAttribute="leading" secondItem="WuU-ed-8aP" secondAttribute="leading" id="y2f-v9-gv3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="eBQ-uV-vkb" id="Y8f-2g-1DU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tvf-xJ-3GL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2250" y="-142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rcz-KQ-OBF">
+            <objects>
+                <navigationController id="NE2-za-MEg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="XjF-r2-tSg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UFX-m7-LjV" kind="relationship" relationship="rootViewController" id="yJQ-XW-dWh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ofo-EL-7tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="-142"/>
+        </scene>
+    </scenes>
+</document>
