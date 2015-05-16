@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">In the Footsteps</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="credits">Credits</string>
+    <string name="title_activity_personaggio">PersonaggioActivity</string>
+    <string name="help_title">User Guide</string>
+
+    <string name="title_activity_map">Mappa</string>
+
+    <string name="visualizza_mappa">Visualizza Mappa</string>
+
+    <string name="città">Città</string>
+    <string name="punti_di_interesse">POI</string>
+    <string name="ristoranti">Cibo</string>
+    <string name="hotel">Hotel</string>
+    <string name="title_activity_credits">CreditsActivity</string>
+
+    <string name="help">
+L\'applicazione In The Footsteps: Trentino\'s Famous People ha l\'obiettivo di reperire informazioni sui luoghi d\'interesse legati ai personaggi Storici del Trentino. L\'app non si limita a definire solo elementi culturali e biografici del personaggio, ma ha l\'intento di fornire una completa esperienza sul territorio con cui entrare in contatto, offrendo, tra le altre cose, informazioni sui migliori luoghi di ristoro e di soggiorno presenti in tutta la Regione del Trentino.\n
+L\'applicazione si compone di tre schermate principali, collegate tra di loro e logicamente connesse. La schermata di avvio si compone di una lista contenente tutti i personaggi storici del Trentino, ottenuti dal Dataset Historical Characters; per facilitare la ricerca del personaggio desiderato, è presente anche una barra di ricerca in cui ricercare uno specifico personaggio. A ogni personaggio presente nella lista è associata un\'icona, che rappresenta le varie categorie di appartenenza:\n
+-) none, categoria sconosciuta;\n
+-) chiesa, categoria ecclesiastica;\n
+-) penna, categoria scrittore;\n
+-) arte, categoria artistica;\n
+-) nobile, categoria nobiltà;\n
+-) parlamento, categoria politica.\n
+Cliccando su uno dei personaggi della lista, è possibile accedere alla seconda schermata, contenente un\'esauriente descrizione del personaggio selezionato; in questa schermata è possibile trovare, oltre al nome e alla categoria d\'appartenenza, un pulsante "Visualizza Mappa" che permette di accedere alla terza schermata dell\'applicazione. In quest\'ultima, l\'obiettivo è di geolocalizzare le informazioni contenute nella scheda descrittiva del singolo personaggio, visualizzabili mediante una mappa. Uno degli aspetti fondamentali di quest\'applicazione è unire elementi d’interesse storico, legati alle città nelle quali il personaggio storico ha vissuto o in cui ha soggiornato, con l\'attuale conformazione territoriale di tali luoghi. Per realizzare tale idea, sono stati inseriti nella parte superiore della schermata quattro bottoni, identificati da quattro icone, che permettono di visualizzare in mappa le seguenti informazioni:\n
+-) Città, nelle quali il personaggio storico ha vissuto/soggiornato;\n
+-) POI (Punti d\'Interesse), ottenuti dai Dataset POI e Architectural and Artistic Heritage, identificanti tutti gli edifici appartenenti al patrimonio artistico delle città;\n
+-) Ristoranti, ottenuti dal Dataset Restaurants, arricchiti con un rating proveniente dalla piattaforma Yelp, oltre a fornire ulteriori informazioni quali indirizzo, telefono, orari ecc.;\n
+-) Hotel, ottenuti interamente dalla piattaforma Yelp, con le stesse caratteristiche illustrate precedentemente per i Ristoranti.\n
+Cliccando su ogni singola icona, sarà possibile visualizzare in mappa i marker relativi alla ricerca effettuata; cliccando su ogni singolo marker, sarà possibile visualizzare le informazioni relative all\'entità selezionata. Da ogni marker, è possibile sfruttare la geolocalizzazione fornita da Google Maps, per calcolare l\'itinerario verso il marker selezionato, dalla propria posizione.\n</string>
+    <string name="title_activity_help">Help</string>
+
+    <string name="hello_world">Hello world!</string>
+
+</resources>

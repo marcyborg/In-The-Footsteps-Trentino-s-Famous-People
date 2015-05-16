@@ -1,0 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package it.rest.webservice;
+
+import it.rest.utility.GetValues;
+import javax.ws.rs.DefaultValue;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+/**
+ *
+ * @author paolo
+ */
+@Path("/RicercaRistoranti")  //anche qui come in ricerca luoghi usiamo i query params
+public class RicercaRistoranti {
+         GetValues get = new GetValues();
+                
+                
+         @GET
+         @Produces({MediaType.APPLICATION_JSON})
+         public String getRistorantiJSON( 
+                 @QueryParam("lat") double latitudine,
+                 @QueryParam("long") double longitudine,
+                 @DefaultValue("0.04") @QueryParam("prec") double prec)
+         {
+             return get.getRistorantiJSON(latitudine, longitudine, prec).toString();
+         }
+         
+         @GET
+         @Produces({MediaType.TEXT_HTML})
+         public String getRistorantiHTML( 
+                 @QueryParam("lat") double latitudine,
+                 @QueryParam("long") double longitudine,
+                 @DefaultValue("0.04") @QueryParam("prec") double prec)
+         {
+             //return get.getRistorantiHTML(latitudine, longitudine, prec);
+             return get.getRistorantiJSON(latitudine, longitudine, prec).toString();
+         }
+    
+}
