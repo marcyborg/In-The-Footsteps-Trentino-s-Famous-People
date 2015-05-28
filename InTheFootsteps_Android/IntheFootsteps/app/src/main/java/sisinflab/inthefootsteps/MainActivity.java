@@ -189,7 +189,7 @@ public class MainActivity extends ActionBarActivity {
          */
         protected void onPostExecute (JSONArray jsonArray){
             //personaggi=new String[]{"Torquato Tasso","Alonso","Paolo Fox","Martufello","Magalli", "Pippi Calze Lunghe", "Paolo Albino", "Ciccio Benzina", "Berlusconi", "Ruby", "Dan Bilzerian", "Castellano", "Famiglia di Lecce",
-              //      "Trizio", "Caio", "Sempronio", "Maione"};
+              //      "Tizio", "Caio", "Sempronio", "Maione"};
 
             if (jsonArray==null){
                 Toast erroreConnessione = Toast.makeText(getApplicationContext(), "Connessione al server non riuscita, controlla la connessione a internet e riprova più tardi.", Toast.LENGTH_LONG);
@@ -255,8 +255,6 @@ public class MainActivity extends ActionBarActivity {
                 //ImageView icona = (ImageView) riga.findViewById(R.id.listIcon);
 
                 //Log.d("ICONA", "asd:" + icona.getId());
-
-                //aggiungere: if personaggio è un cazzo di prete metti la chiesa, se è un nobile metti il cilindro col monocolo
 
                 //icona.setImageResource(R.drawable.chiesa);
 
