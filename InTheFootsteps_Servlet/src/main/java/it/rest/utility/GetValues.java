@@ -22,7 +22,6 @@ import org.json.JSONObject;
  */
 public class GetValues {
    
-   //public String ServerTomcat = "http://193.204.59.21:8080";
    public String ServerTomcat = "http://server-footsteps.rhcloud.com";
    public String infoPersonaggio = "/ProvaTomcat-1.0-SNAPSHOT/rest/InfoPersonaggio/";
    public String endpoint = "http://sandbox.fusepool.info:8181/sparql/select";
