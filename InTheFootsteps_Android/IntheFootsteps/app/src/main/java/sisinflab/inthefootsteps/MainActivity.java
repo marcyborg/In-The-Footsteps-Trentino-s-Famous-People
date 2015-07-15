@@ -66,7 +66,6 @@ public class MainActivity extends ActionBarActivity {
         //chiamata asincrona per eseguire la query per ottenere la lista dei nomi
         new RecuperaPersonaggi().execute(ENDPOINT_PERSONAGGI);
 
-
         listView = (ListView) findViewById(R.id.listview);
 
         //Listener che chiama l'intent nel caso di click su un elemento della lista
@@ -88,12 +87,8 @@ public class MainActivity extends ActionBarActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
             }
         });
-
-
     }
 
 
@@ -213,10 +208,8 @@ public class MainActivity extends ActionBarActivity {
                     e.printStackTrace();
                 }
             }
-
             personaggi = stringArrayList.toArray(new String[stringArrayList.size()]);
             mestiere = stringMestiereArrayList.toArray(new String[stringMestiereArrayList.size()]);
-
 
             //copio il jsonArray per renderlo disponibile nel metodo principale onCreate()
             try {
@@ -224,19 +217,14 @@ public class MainActivity extends ActionBarActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
             inputSearch = (EditText) findViewById(R.id.inputSearch);
 
-           // adapter=new ArrayAdapter<String>(getApplicationContext(), R.layout.row, R.id.textView, personaggi);
+            // adapter=new ArrayAdapter<String>(getApplicationContext(), R.layout.row, R.id.textView, personaggi);
             listView = (ListView) findViewById(R.id.listview);
             //listView.setAdapter(adapter);
 
-
             iconicAdapter = new IconicAdapter();
             listView.setAdapter(iconicAdapter);
-
-
 
             //Log.d("RIGA", "qualcosa: " + listView.getAdapter().getCount());
             //Log.d("RIGA", "qualcosa che sta dentro" + listView.getAdapter().getItem(1).toString());
@@ -259,8 +247,6 @@ public class MainActivity extends ActionBarActivity {
                 //icona.setImageResource(R.drawable.chiesa);
 
             }
-
-
             //enabling search filter
             inputSearch.addTextChangedListener(new TextWatcher() {
 
@@ -284,7 +270,6 @@ public class MainActivity extends ActionBarActivity {
 
             ProgressBar mProgress = (ProgressBar) findViewById(R.id.progressMain);
             mProgress.setVisibility(View.GONE);
-
         }
 
         public View getViewByPosition(int pos, ListView listView) {
@@ -298,9 +283,7 @@ public class MainActivity extends ActionBarActivity {
                 return listView.getChildAt(childIndex);
             }
         }
-
-
-        }
+    }
 
     class IconicAdapter extends ArrayAdapter<String> {
         IconicAdapter() {
@@ -325,11 +308,9 @@ public class MainActivity extends ActionBarActivity {
                 case "parlamento": icon.setImageResource(R.drawable.parlamento);
                     break;
             }
-
             //TextView size=(TextView)row.findViewById(R.id.size);
             //size.setText(String.format(getString(R.string.size_template), items[position].length()));
             return(row);
         }
-
     }
 }
