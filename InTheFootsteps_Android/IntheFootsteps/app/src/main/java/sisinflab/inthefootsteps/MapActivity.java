@@ -53,27 +53,7 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
 
     @Override
     public void onMapReady(GoogleMap map) {
-/*        LatLng sydney = new LatLng(-33.867, 151.206);
-        LatLng trento = new LatLng(46.0804614,11.1203557);
-        LatLng lucera = new LatLng(41.5052419,15.3474605);
-
-        map.addMarker(new MarkerOptions()
-                .title("Sydney")
-                .snippet("The most populous city in Australia.")
-                .position(sydney));
-
-        map.addMarker(new MarkerOptions()
-                .title("Trento")
-                .snippet("Trentatre trentini entrarono a Trento, tutti e trentatre trotterellando.")
-                .position(trento));
-
-        map.addMarker(new MarkerOptions()
-                .title("Lucera")
-                .snippet("Lunonc'èpiù")
-                .position(lucera));
-*/
-       mostraCittà(null);
-
+        mostraCittà(null);
         map.setMyLocationEnabled(true);
         try {
             LatLng place = new LatLng(placeArray.getJSONObject(0).getDouble("lat"),placeArray.getJSONObject(0).getDouble("long"));
@@ -81,7 +61,6 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        //map.moveCamera(CameraUpdateFactory.newLatLngZoom(lucera, 13));
     }
 
     public void mostraCittà(View v){
@@ -104,7 +83,6 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                 }
             }
         }
-
         mProgress.setVisibility(View.GONE);
     }
 
@@ -121,9 +99,7 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                 (visibile.northeast.longitude - visibile.southwest.longitude) * (visibile.northeast.longitude - visibile.southwest.longitude))/2;
 
         String endpointPOI = MainActivity.ENDPOINT_LUOGHI_INTERESSE + "/?lat=" + centroMappa.latitude + "&long=" + centroMappa.longitude + "&prec=" + distanzaVisibile;
-
         new RecuperaPOI().execute(endpointPOI);
-
     }
 
     public void mostraRistoranti(View v){
@@ -139,7 +115,6 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                 (visibile.northeast.longitude - visibile.southwest.longitude) * (visibile.northeast.longitude - visibile.southwest.longitude))/2;
 
         String endpointPOI = MainActivity.ENDPOINT_RISTORANTI + "/?lat=" + centroMappa.latitude + "&long=" + centroMappa.longitude + "&prec=" + distanzaVisibile;
-
         new RecuperaRistoranti().execute(endpointPOI);
     }
 
@@ -156,7 +131,6 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                 (visibile.northeast.longitude - visibile.southwest.longitude) * (visibile.northeast.longitude - visibile.southwest.longitude))/2;
 
         String endpointPOI = MainActivity.ENDPOINT_HOTEL + "/?lat=" + centroMappa.latitude + "&long=" + centroMappa.longitude + "&prec=" + distanzaVisibile;
-
         new RecuperaHotel().execute(endpointPOI);
     }
 
@@ -173,10 +147,8 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                 cibo.setEnabled(true);
                 ImageButton hotel = (ImageButton) findViewById(R.id.buttonHotel);
                 hotel.setEnabled(true);
-
             }
         });
-
     }
 
     public void disattivaPulsanti(){
@@ -192,13 +164,9 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                 cibo.setEnabled(false);
                 ImageButton hotel = (ImageButton) findViewById(R.id.buttonHotel);
                 hotel.setEnabled(false);
-
             }
         });
-
     }
-
-
 
     /**
      * Classe per recuperare la lista di punti di interesse
@@ -236,7 +204,6 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                 e.printStackTrace();
                 return null;
             }
-
         }
 
         /**
@@ -245,7 +212,6 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
          * @param jsonArray ottenuto dalla query nel metodo doInBackground()
          */
         protected void onPostExecute (JSONArray jsonArray){
-
             attivaPulsanti();
 
             if (jsonArray==null){
@@ -294,12 +260,9 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                     }
                 }
             }
-
             ProgressBar mProgress = (ProgressBar) findViewById(R.id.progressMap);
             mProgress.setVisibility(View.GONE);
-
         }
-
     }
 
     /**
@@ -347,7 +310,6 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
          * @param jsonArray ottenuto dalla query nel metodo doInBackground()
          */
         protected void onPostExecute (JSONArray jsonArray){
-
             attivaPulsanti();
 
             if (jsonArray==null){
@@ -358,7 +320,6 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                 mProgress.setVisibility(View.GONE);
                 return;
             }
-
             GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(R.id.mappaFragment)).getMap();
             map.clear();
 
@@ -409,10 +370,8 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                     }
                 }
             }
-
             ProgressBar mProgress = (ProgressBar) findViewById(R.id.progressMap);
             mProgress.setVisibility(View.GONE);
-
         }
 
     }
@@ -473,7 +432,6 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                 mProgress.setVisibility(View.GONE);
                 return;
             }
-
             GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(R.id.mappaFragment)).getMap();
             map.clear();
 
@@ -536,12 +494,8 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
                     }
                 }
             }
-
             ProgressBar mProgress = (ProgressBar) findViewById(R.id.progressMap);
             mProgress.setVisibility(View.GONE);
-
         }
-
     }
-
 }
