@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.rest.utility;
 
 import java.util.ArrayList;
@@ -12,13 +7,8 @@ import java.util.Set;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
-
 import org.json.JSONObject;
 
-/**
- *
- * @author paolo
- */
 public class Place {
     public String endpoint = "http://sandbox.fusepool.info:8181/sparql/select";
     public String endpointPoliba = "http://193.204.59.21:8890/sparql";
@@ -60,9 +50,6 @@ public class Place {
             icona = "nobile";
         if(job.contains("deputato") || job.contains("senat") || job.contains("prefetto") || job.contains("parlamentare"))
             icona = "parlamento";
-        
-        
-        
         return icona;
     }
     
@@ -71,7 +58,7 @@ public class Place {
         String[] luoghi = {"<http://it.dbpedia.org/resource/Trentino-Alto_Adige>","<http://it.dbpedia.org/resource/Trento>","<http://it.dbpedia.org/resource/Bolzano>"};
         String query = "SELECT DISTINCT ?place \n" +
           "WHERE{\n" ;            
-        //altre citta  da qui  usiamo i fragments
+        // altre citta  da qui  usiamo i fragments
         query += "{ ?place <http://dbpedia.org/ontology/wikiPageWikiLink> <http://it.dbpedia.org/resource/Provincia_di_Trento> ;"
                 + "                <http://airpedia.org/typeWithConfidence#1> <http://dbpedia.org/ontology/Place> . "
                 + "} \n" ;
@@ -113,7 +100,6 @@ public class Place {
                 "<"+ uri +"> dbpprop-it:longitudineSecondi ?longS.\n" +
                 "<"+ uri +"> rdfs:label ?label.\n" +
                 "}";
-        
         
         Sparql sp = new Sparql(query, endpointDBpedia);
         JSONObject res = new JSONObject(sp.returnJSON());
