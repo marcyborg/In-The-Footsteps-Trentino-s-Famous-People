@@ -10,8 +10,7 @@ import org.apache.log4j.xml.DOMConfigurator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class GetValues {
-   
+public class GetValues {   
    public String ServerTomcat = "http://server-footsteps.rhcloud.com";
    public String infoPersonaggio = "/ProvaTomcat-1.0-SNAPSHOT/rest/InfoPersonaggio/";
    public String endpoint = "http://sandbox.fusepool.info:8181/sparql/select";
@@ -37,7 +36,6 @@ public class GetValues {
                 "              schema:jobTitle ?job ; \n" +    
                 "             fam:entity-reference ?ref . \n"+
                 "} \n ORDER BY ?name";
-            
     
    public String getPersonaggiStoriciJSON(){
        logger.info("ListaPersonaggi JSON");
@@ -61,25 +59,21 @@ public class GetValues {
            row.accumulate("icona", Place.returnJobIcona(job));
            row.accumulate("detailEndpoint",ServerTomcat+infoPersonaggio+uri.replace("http://www.trentinocultura.net/asp_cat/main.asp?", ""));
            arrayRisultati.put(row);
-           
        }
-       
        logger.info("Restituiti "+arrayRisultati.length()+" personaggi storici");
        
-//       return sp.returnJSON();
+   // return sp.returnJSON();
        return arrayRisultati.toString();
    }
    
    public String getPersonaggiStoriciHTML(){
        logger.info("ListaPersonaggi HTML");
-       
        String res ="";
-
        Sparql sp = new Sparql(queryPersonaggiStorici, endpoint);
        return sp.returnHTML();
    }
+   
    public String getInfoPersonaggioHTML(String URI){
-       
        logger.info("InfoPersonaggioHTML" +"richiesto:"+URI);
        
        String queryPersonaggio = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
@@ -102,7 +96,6 @@ public class GetValues {
               
               logger.info("Restituito InfoPersonaggio HTML");
               return sp.returnHTML();
-        
    }
    
    public String getInfoPersonaggioJSON(String URI){
@@ -153,17 +146,14 @@ public class GetValues {
                String ref = Place.converterWikiToDBpedia(jarrayReference.getJSONObject(i).getJSONObject("ref").getString("value"));
                listaReference.add(ref);
                reference.put(contaRef++, ref);
-               
            }
        }
-
        JSONObject json = jarray.getJSONObject(0);
        JSONObject res = new JSONObject();
        
        String[] head = {"title","name","birthPlace","deathPlace","sameAs","description"};
        for(int i=0; i< head.length; i++)
        {
-           
            if(i == 2){
                if(json.has("birthPlace")){
                   listaReference.add((json.getJSONObject("birthPlace").getString("value")));
@@ -182,13 +172,12 @@ public class GetValues {
             if(json.has(head[i]))
                res.accumulate(head[i], json.getJSONObject(head[i]).getString("value"));  
            }
-           
        }
        
        if(jarrayReference.length() > 0)
          res.put("reference", reference);
        
-       //res.put("controllo",listaReference.toString());
+         // res.put("controllo",listaReference.toString());
        
        JSONArray placeArray = new JSONArray(); // qui andranno i reference solo in Trentino
        // recuperiamo i posti del trentino
@@ -204,15 +193,11 @@ public class GetValues {
                    placeArray.put(contaRef++, pl.getGeo(s));
          }
        }
-       
       if(placeArray.length() > 0)
           // res.accumulate("place", placeArray);
            res.put("place", placeArray);
-   
       logger.info("Restituito InfoPersonaggio JSON "+json.has("name"));
-
       return res.toString();
-       
    } // fine getInfoPersonaggioJSON()
    
    public JSONArray getLuoghiInteresse(double latitudine, double longitudine, double prec)
@@ -248,10 +233,7 @@ public class GetValues {
             json.accumulate("lat",jarrayRes.getJSONObject(i).getJSONObject("lat").getDouble("value"));
             res.put(json);            
         }
-        
         logger.info("RicercaLuoghi JSON "+"richiesta per lat:"+latitudine+" long:"+longitudine+ " precisione: "+prec + " restituiti: "+jarrayRes.length()+" luoghi");
-
-        
         return res;
     }
    
@@ -276,13 +258,9 @@ public class GetValues {
                         "  FILTER (!sameTerm(\"CASA\", ?description))"+
                         "}";
         Sparql sp = new Sparql(query, endpoint);
-       
         logger.info("RicercaLuoghi HTML "+"richiesta per lat:"+latitudine+" long:"+longitudine+ " precisione: "+prec + "RISPOSTO");
-
-        
         return sp.returnHTML();
     }
-    
     
     public JSONArray getRistorantiJSON(double latitudine, double longitudine, double prec)
     {
@@ -343,13 +321,10 @@ public class GetValues {
             {
                 if(ristor.has(d))
                     json.put(d, String.valueOf(ristor.get(d)));
-                
             }
             res.put(json);            
         }
-        
         logger.info("RicercaRistoranti JSON "+"richiesta per lat:"+latitudine+" long:"+longitudine+ " precisione: "+prec + " restituiti: "+jarrayRes.length()+ " ristoranti");
-        
         return res;
     }  //fine getRistorantiJSON  
     
@@ -389,7 +364,7 @@ public class GetValues {
     public String getHotelHTML(double latitudine, double longitudine, double prec)
     {
         logger.info("RicercaHotel HTML "+"richiesta per lat:"+latitudine+" long:"+longitudine+ " precisione: "+prec);
-        
+      
         String query =  "PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>\n" +
                         "PREFIX schema: <http://schema.org/>\n" +
                         "PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n" +
