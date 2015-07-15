@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.rest.utility;
 
 import it.rest.webservice.InfoPersonaggio;
@@ -15,11 +10,6 @@ import org.apache.log4j.xml.DOMConfigurator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-
-/**
- *
- * @author paolo
- */
 public class GetValues {
    
    public String ServerTomcat = "http://server-footsteps.rhcloud.com";
@@ -33,7 +23,6 @@ public class GetValues {
        DOMConfigurator.configure(log4jProp);
        logger.debug("Creazione oggeto GetValues");
    }
-   
    
             String queryPersonaggiStorici = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "PREFIX schema: <http://schema.org/>\n" +
@@ -52,7 +41,6 @@ public class GetValues {
     
    public String getPersonaggiStoriciJSON(){
        logger.info("ListaPersonaggi JSON");
-       
        
        String res ="";
 
@@ -94,7 +82,7 @@ public class GetValues {
        
        logger.info("InfoPersonaggioHTML" +"richiesto:"+URI);
        
-              String queryPersonaggio = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+       String queryPersonaggio = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
         "PREFIX schema: <http://schema.org/>\n" +
         "PREFIX dbo: <http://www.dbpedia.org/ontology/>\n" +
         "PREFIX fam: <http://vocab.fusepool.info/fam#>\n" +
@@ -117,11 +105,10 @@ public class GetValues {
         
    }
    
-   
    public String getInfoPersonaggioJSON(String URI){
         logger.info("InfoPersonaggioJSON " +"richiesto:"+URI);
        
-              String queryPersonaggio = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+         String queryPersonaggio = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
         "PREFIX schema: <http://schema.org/>\n" +
         "PREFIX dbo: <http://www.dbpedia.org/ontology/>\n" +
         "PREFIX fam: <http://vocab.fusepool.info/fam#>\n" +
@@ -140,8 +127,6 @@ public class GetValues {
        Sparql sp = new Sparql(queryPersonaggio,endpoint);
        JSONObject result = new JSONObject(sp.returnJSON());
        JSONArray jarray = result.getJSONObject("results").getJSONArray("bindings");       
-
-       //qui per non creare casini assurdi i reference li prendiamo a parte con un'altra query
        
        String queryReference ="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
             "PREFIX schema: <http://schema.org/>\n" +
@@ -158,8 +143,8 @@ public class GetValues {
        sp = new Sparql(queryReference,endpoint);
        JSONObject resultReference = new JSONObject(sp.returnJSON());
        JSONArray jarrayReference = resultReference.getJSONObject("results").getJSONArray("bindings");
-       JSONArray reference =new JSONArray(); //il jsonArray dei Reference
-         //analizziamo se ci sono reference
+       JSONArray reference =new JSONArray(); // il jsonArray dei Reference
+         // analizziamo se ci sono reference
        Set<String> listaReference =new HashSet<String>();
        if(jarrayReference.length() > 0){
        int contaRef = 0;
@@ -171,7 +156,6 @@ public class GetValues {
                
            }
        }
-              
 
        JSONObject json = jarray.getJSONObject(0);
        JSONObject res = new JSONObject();
@@ -179,7 +163,6 @@ public class GetValues {
        String[] head = {"title","name","birthPlace","deathPlace","sameAs","description"};
        for(int i=0; i< head.length; i++)
        {
-
            
            if(i == 2){
                if(json.has("birthPlace")){
@@ -207,10 +190,10 @@ public class GetValues {
        
        //res.put("controllo",listaReference.toString());
        
-       JSONArray placeArray = new JSONArray(); //qui andranno i reference solo in trentino
-       //recuperiamo i posti del trentino
+       JSONArray placeArray = new JSONArray(); // qui andranno i reference solo in Trentino
+       // recuperiamo i posti del trentino
        List<String> placeTrentino = (new Place()).getTrentinoPlace();
-          //controlliamo se i reference del cristiano sono in trentino
+       //controlliamo se i reference del personaggio sono in Trentino
        int contaRef = 0;
        if(listaReference.size() > 0){
        Place pl = new Place();
@@ -225,14 +208,12 @@ public class GetValues {
       if(placeArray.length() > 0)
           // res.accumulate("place", placeArray);
            res.put("place", placeArray);
-      
-     
+   
       logger.info("Restituito InfoPersonaggio JSON "+json.has("name"));
-       
 
-        return res.toString();
+      return res.toString();
        
-   }//fine getInfoPersonaggioJSON()
+   } // fine getInfoPersonaggioJSON()
    
    public JSONArray getLuoghiInteresse(double latitudine, double longitudine, double prec)
     {
@@ -307,7 +288,6 @@ public class GetValues {
     {
         logger.info("RicercaRistoranti JSON "+"richiesta per lat:"+latitudine+" long:"+longitudine+ " precisione: "+prec);
 
-        
         //credenziali YELP
             String CONSUMER_KEY = "Q87CAjXrI_s3k1LbbIEe9Q";
             String CONSUMER_SECRET = "9TflxKNwqGLNZ9IW_qJbd3SPc_4";
@@ -315,8 +295,6 @@ public class GetValues {
             String TOKEN_SECRET = "8HwHjAYPqdGN-6dPW8OsPx7D3g0";
         //oggetto yelpApi
         YelpAPI yelpApi = new YelpAPI(CONSUMER_KEY, CONSUMER_SECRET, TOKEN, TOKEN_SECRET);
-            
-        
         
         String query = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
                         "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
@@ -406,7 +384,7 @@ public class GetValues {
         Sparql sp = new Sparql(query, endpoint);
         logger.info("RicercaRistoranti HTML "+"richiesta per lat:"+latitudine+" long:"+longitudine+ " precisione: "+prec+" FINITO");
         return sp.returnHTML();
-    }  //fine getRistorantiHTML
+    }  // fine getRistorantiHTML
     
     public String getHotelHTML(double latitudine, double longitudine, double prec)
     {
@@ -445,7 +423,7 @@ public class GetValues {
         Sparql sp = new Sparql(query, endpoint);
         logger.info("RicercaHotel HTML "+"richiesta per lat:"+latitudine+" long:"+longitudine+ " precisione: "+prec+ "FINITO");
         return sp.returnHTML();        
-    }//fine getHotelHTML()
+    } // fine getHotelHTML()
     
     public JSONArray getHotelJSON(double latitudine, double longitudine, double prec)
     {
@@ -481,9 +459,9 @@ public class GetValues {
                         "  }";
         
         Sparql sp = new Sparql(query, endpoint);
-         //array dei risultati finali
+        // array dei risultati finali
         JSONArray res = new JSONArray();
-        //mettiamo tutti i risultati in questo JSONArray
+        // mettiamo tutti i risultati in questo JSONArray
         JSONArray jarrayRes = (new JSONObject(sp.returnJSON())).getJSONObject("results").getJSONArray("bindings");
         String[] campiHotel = { "name", "category", "lat", "long", "comment", "phone", "loc","via", "sito",  "mail"};
         for(int i=0; i < jarrayRes.length(); i++)
@@ -506,17 +484,11 @@ public class GetValues {
                             json.put(c, String.valueOf(hotel.getJSONObject(c).get("value")));}
                     }
                 }
-                   
-                
             }
             res.put(json);            
         }
-        
         logger.info("RicercaHotel JSON "+"richiesta per lat:"+latitudine+" long:"+longitudine+ " precisione: "+prec+" restituiti: "+jarrayRes.length()+" hotel");
         return res;
     }  
     // fine getHotelJSON()   
-    
-    
-    
 }
