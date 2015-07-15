@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.rest.webservice;
 
 import it.rest.utility.GetValues;
@@ -14,19 +9,14 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
-/**
- *
- * @author paolo
- */
 @Path("/InfoPersonaggio")
 public class InfoPersonaggio {
     
             private static Logger logger = Logger.getLogger(InfoPersonaggio.class);
             private final String log4jProp="/var/lib/openshift/5528e950fcf93381de00012a/app-root/data/propLog.xml";
-           // private final DOMConfigurator conf=new DOMConfigurator();
+            // private final DOMConfigurator conf=new DOMConfigurator();
     
             GetValues get = new GetValues();
-            
             @GET
             @Path("{uri : .*}")
             @Produces({MediaType.APPLICATION_JSON})
