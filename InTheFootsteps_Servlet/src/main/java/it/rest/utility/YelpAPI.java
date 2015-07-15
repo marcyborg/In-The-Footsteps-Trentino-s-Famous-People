@@ -1,10 +1,10 @@
 package it.rest.utility;
 
-//import org.json.simple.JSONArray;
-//import org.json.simple.JSONObject;
+//  import org.json.simple.JSONArray;
+//  import org.json.simple.JSONObject;
 import org.json.JSONObject;
 import org.json.JSONArray;
-//import org.json.simple.parser.JSONParser;
+//  import org.json.simple.parser.JSONParser;
 import org.scribe.builder.ServiceBuilder;
 import org.scribe.model.OAuthRequest;
 import org.scribe.model.Response;
@@ -30,8 +30,8 @@ import org.json.JSONException;
 public class YelpAPI {
 
   private static final String API_HOST = "api.yelp.com";
-  //private static final String DEFAULT_TERM = "Trattoria Al Tino";
-  //private static final String DEFAULT_LOCATION = "Trento";
+  //  private static final String DEFAULT_TERM = "Trattoria Al Tino";
+  //  private static final String DEFAULT_LOCATION = "Trento";
   private static final int SEARCH_LIMIT = 20;
   private static final String SEARCH_PATH = "/v2/search";
   private static final String BUSINESS_PATH = "/v2/business";
@@ -78,7 +78,7 @@ public class YelpAPI {
   public String searchForBusinessesByLocation(String term, String geo) {
     OAuthRequest request = createOAuthRequest(SEARCH_PATH);
     request.addQuerystringParameter("term", term);
-    //request.addQuerystringParameter("location", location);
+    //  request.addQuerystringParameter("location", location);
     request.addQuerystringParameter("ll", geo);
     request.addQuerystringParameter("sort", "1");
     request.addQuerystringParameter("limit", String.valueOf(SEARCH_LIMIT));
@@ -189,12 +189,8 @@ public class YelpAPI {
       } catch (JSONException ex) {
           Logger.getLogger(YelpAPI.class.getName()).log(Level.SEVERE, null, ex);
       }
-
-
-
   }
 
-  
   public JSONObject searchRistorante(YelpAPI yelpApi, String nome, String geo){
     String response = yelpApi.searchForBusinessesByLocation(nome, geo);
     
