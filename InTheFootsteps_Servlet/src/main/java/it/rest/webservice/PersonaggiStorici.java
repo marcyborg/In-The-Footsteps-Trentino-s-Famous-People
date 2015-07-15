@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package it.rest.webservice;
 
 import it.rest.utility.GetValues;
@@ -13,17 +8,10 @@ import javax.ws.rs.core.MediaType;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
-/**
- *
- * @author paolo
- */
-
 @Path("/listapersonaggi")
 public class PersonaggiStorici {
         GetValues get = new GetValues();
-       
- 
-	@GET
+       	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public String getPeopleBrowser() {
 		return get.getPersonaggiStoriciHTML();
