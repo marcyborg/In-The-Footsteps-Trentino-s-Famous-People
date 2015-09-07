@@ -99,7 +99,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             case 1:
                 // POI
                 SwiftSpinner.show("Recupero POI...")
-                let endpoint = String(format: "http://server-footsteps.rhcloud.com/ProvaTomcat-1.0-SNAPSHOT/rest/RicercaLuoghiInteresse/?lat=%f&long=%f&prec=0.01", arguments: [lat, long])
+                let endpoint = String(format: "http://inthefootsteps.solr.netseven.it/rest/RicercaLuoghiInteresse/?lat=%f&long=%f&prec=0.01", arguments: [lat, long])
                 
                 Alamofire.request(.GET, endpoint).responseJSON { (request, response, data, error) in
                     if let err = error {
@@ -130,7 +130,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             case 2:
                 // Restaurants
                 SwiftSpinner.show("Recupero ristoranti...")
-                let endpoint = String(format: "http://server-footsteps.rhcloud.com/ProvaTomcat-1.0-SNAPSHOT/rest/RicercaRistoranti/?lat=%f&long=%f&prec=0.01", arguments: [lat, long])
+                let endpoint = String(format: "http://inthefootsteps.solr.netseven.it/rest/RicercaRistoranti/?lat=%f&long=%f&prec=0.01", arguments: [lat, long])
                 
                 Alamofire.request(.GET, endpoint).responseJSON { (request, response, data, error) in
                     
@@ -165,7 +165,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             case 3:
                 // Hotels
                 SwiftSpinner.show("Recupero strutture ricettive...")
-                let endpoint = String(format: "http://server-footsteps.rhcloud.com/ProvaTomcat-1.0-SNAPSHOT/rest/RicercaHotel/?lat=%f&long=%f&prec=0.01", arguments: [lat, long])
+                let endpoint = String(format: "http://inthefootsteps.solr.netseven.it/rest/RicercaHotel/?lat=%f&long=%f&prec=0.01", arguments: [lat, long])
                 
                 Alamofire.request(.GET, endpoint).responseJSON { (request, response, data, error) in
                     

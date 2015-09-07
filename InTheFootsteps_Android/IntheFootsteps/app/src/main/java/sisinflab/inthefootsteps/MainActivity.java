@@ -37,7 +37,9 @@ import java.util.Objects;
 
 public class MainActivity extends ActionBarActivity {
 
-    static final String ENDPOINT_ROOT = "http://server-footsteps.rhcloud.com/ProvaTomcat-1.0-SNAPSHOT/rest/";
+    //static final String ENDPOINT_ROOT = "http://server-footsteps.rhcloud.com/ProvaTomcat-1.0-SNAPSHOT/rest/";
+    
+    static final String ENDPOINT_ROOT = "http://inthefootsteps.solr.netseven.it/rest/";
     static final String ENDPOINT_PERSONAGGI = ENDPOINT_ROOT + "listapersonaggi";
     static final String ENDPOINT_LUOGHI_INTERESSE = ENDPOINT_ROOT + "RicercaLuoghiInteresse";
     static final String ENDPOINT_RISTORANTI = ENDPOINT_ROOT + "RicercaRistoranti";

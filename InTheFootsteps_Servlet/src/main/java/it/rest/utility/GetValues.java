@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public class GetValues {   
    public String ServerTomcat = "http://server-footsteps.rhcloud.com";
    public String infoPersonaggio = "/ProvaTomcat-1.0-SNAPSHOT/rest/InfoPersonaggio/";
-   public String endpoint = "http://sandbox.fusepool.info:8181/sparql/select";
+   public String endpoint = "http://data.fusepool.info:8181/sparql/select";
    
    private static Logger logger = Logger.getLogger(GetValues.class);
    private final String log4jProp="/var/lib/openshift/5528e950fcf93381de00012a/app-root/data/propLog.xml";
@@ -29,7 +29,7 @@ public class GetValues {
                 "PREFIX fam: <http://vocab.fusepool.info/fam#>\n" +
                 "\n" +
                 "SELECT DISTINCT ?person ?name ?job \n"+ 
-                "FROM <http://sandbox.fusepool.info:8181/ldp/historical-characters/personaggi_storici_trentino-refine-csv-csv-transformed>" +
+                "FROM <http://data.fusepool.info:8181/ldp/historical-characters/personaggi_storici_trentino-refine-csv-csv-transformed>" +
                 "\n WHERE {\n" +
                 "  ?person a schema:Person ;\n" +
                 "             schema:name ?name ;\n" +
@@ -82,7 +82,7 @@ public class GetValues {
         "PREFIX fam: <http://vocab.fusepool.info/fam#>\n" +
         "\n" +
         "SELECT ?name ?title ?birthPlace ?deathPlace ?sameAs ?description ?reference \n" +
-        "FROM <http://sandbox.fusepool.info:8181/ldp/historical-characters/personaggi_storici_trentino-refine-csv-csv-transformed>\n" +
+        "FROM <http://data.fusepool.info:8181/ldp/historical-characters/personaggi_storici_trentino-refine-csv-csv-transformed>\n" +
         "WHERE {\n" +
         "<"+URI+"> schema:name ?name."+
         "OPTIONAL { <"+URI+"> schema:jobTitle ?title }"+
@@ -107,7 +107,7 @@ public class GetValues {
         "PREFIX fam: <http://vocab.fusepool.info/fam#>\n" +
         "\n" +
         "SELECT ?name ?title ?birthPlace ?deathPlace ?sameAs ?description \n" +
-        "FROM <http://sandbox.fusepool.info:8181/ldp/historical-characters/personaggi_storici_trentino-refine-csv-csv-transformed>\n" +
+        "FROM <http://data.fusepool.info:8181/ldp/historical-characters/personaggi_storici_trentino-refine-csv-csv-transformed>\n" +
         "WHERE {\n" +
         "<"+URI+"> schema:name ?name."+
         "OPTIONAL { <"+URI+"> schema:jobTitle ?title }"+
@@ -127,7 +127,7 @@ public class GetValues {
             "PREFIX fam: <http://vocab.fusepool.info/fam#>\n" +
             "\n" +
             "SELECT ?ref\n" +
-            "FROM <http://sandbox.fusepool.info:8181/ldp/historical-characters/personaggi_storici_trentino-refine-csv-csv-transformed>\n" +
+            "FROM <http://data.fusepool.info:8181/ldp/historical-characters/personaggi_storici_trentino-refine-csv-csv-transformed>\n" +
             "WHERE {\n" +
             "  <"+URI+"> a schema:Person ;\n" +
             "            fam:entity-reference ?ref .\n" +
@@ -209,7 +209,7 @@ public class GetValues {
                         "PREFIX dct: <http://purl.org/dc/terms/>\n" +
                         "\n" +
                         "SELECT DISTINCT ?label ?lat ?long ?description\n" +
-                        "FROM <http://sandbox.fusepool.info:8181/ldp/trentino-architectural-cultural-heritage-enriched-ttl>\n" +
+                        "FROM <http://data.fusepool.info:8181/ldp/trentino-architectural-cultural-heritage-enriched-ttl>\n" +
                         "WHERE {\n" +
                         "  ?building a schema:TouristAttraction ;\n" +
                         "              rdfs:label ?label;\n" +
@@ -246,7 +246,7 @@ public class GetValues {
                         "PREFIX dct: <http://purl.org/dc/terms/>\n" +
                         "\n" +
                         "SELECT DISTINCT ?label ?lat ?long ?description\n" +
-                        "FROM <http://sandbox.fusepool.info:8181/ldp/trentino-architectural-cultural-heritage-enriched-ttl>\n" +
+                        "FROM <http://data.fusepool.info:8181/ldp/trentino-architectural-cultural-heritage-enriched-ttl>\n" +
                         "WHERE {\n" +
                         "  ?building a schema:TouristAttraction ;\n" +
                         "              rdfs:label ?label;\n" +
@@ -280,7 +280,7 @@ public class GetValues {
                         "PREFIX schema: <http://schema.org/>\n" +
                         "\n" +
                         "SELECT ?name ?locality ?street ?locality ?lat ?long \n" +
-                        "FROM <http://sandbox.fusepool.info:8181/ldp/trentino-restaurants-1/osterie-csv-csv-transformed-1>\n" +
+                        "FROM <http://data.fusepool.info:8181/ldp/trentino-restaurants-1/osterie-csv-csv-transformed-1>\n" +
                         "{\n" +
                         "  ?restaurant a schema:Restaurant ;  \n" +
                         "         schema:name ?name ;\n" +
@@ -338,7 +338,7 @@ public class GetValues {
                         "PREFIX schema: <http://schema.org/>\n" +
                         "\n" +
                         "SELECT ?name ?locality ?street ?locality ?lat ?long \n" +
-                        "FROM <http://sandbox.fusepool.info:8181/ldp/trentino-restaurants-1/osterie-csv-csv-transformed-1>\n" +
+                        "FROM <http://data.fusepool.info:8181/ldp/trentino-restaurants-1/osterie-csv-csv-transformed-1>\n" +
                         "{\n" +
                         "  ?restaurant a schema:Restaurant ;  \n" +
                         "         schema:name ?name ;\n" +
@@ -370,7 +370,7 @@ public class GetValues {
                         "PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n" +
                         "\n" +
                         "SELECT DISTINCT ?h ?name ?category ?lat ?long ?comment ?phone ?loc ?via ?sito ?mail\n" +
-                        "FROM <http://sandbox.fusepool.info:8181/ldp/trentino-point-of-interest-ttl>\n" +
+                        "FROM <http://data.fusepool.info:8181/ldp/trentino-point-of-interest-ttl>\n" +
                         "WHERE {\n" +
                         "  VALUES ?category{\n" +
                         "    \"Bed & Breakfast\"\n" +
@@ -408,7 +408,7 @@ public class GetValues {
                         "PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n" +
                         "\n" +
                         "SELECT DISTINCT ?h ?name ?category ?lat ?long ?comment ?phone ?loc ?via ?sito ?mail\n" +
-                        "FROM <http://sandbox.fusepool.info:8181/ldp/trentino-point-of-interest-ttl>\n" +
+                        "FROM <http://data.fusepool.info:8181/ldp/trentino-point-of-interest-ttl>\n" +
                         "WHERE {\n" +
                         "  VALUES ?category{\n" +
                         "    \"Bed & Breakfast\"\n" +

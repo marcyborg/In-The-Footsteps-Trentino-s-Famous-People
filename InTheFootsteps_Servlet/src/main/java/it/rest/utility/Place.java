@@ -10,7 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Place {
-    public String endpoint = "http://sandbox.fusepool.info:8181/sparql/select";
+    public String endpoint = "http://data.fusepool.info:8181/sparql/select";
     public String endpointPoliba = "http://193.204.59.21:8890/sparql";
     public String endpointDBpedia = "http://it.dbpedia.org/sparql";
     
