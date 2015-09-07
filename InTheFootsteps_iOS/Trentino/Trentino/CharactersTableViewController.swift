@@ -21,7 +21,7 @@ class CharactersTableViewController: UITableViewController, UISearchResultsUpdat
 	
 	let CELL_HEIGHT: CGFloat = 60
 
-    let endpointCharactersList: String = "http://server-footsteps.rhcloud.com/ProvaTomcat-1.0-SNAPSHOT/rest/listapersonaggi"
+    let endpointCharactersList: String = "http://inthefootsteps.solr.netseven.it/rest/listapersonaggi"
 	var charactersList: JSON?
 	var filteredList: [JSON] = []
 	
