@@ -11,8 +11,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class GetValues {   
-   public String ServerTomcat = "http://server-footsteps.rhcloud.com";
-   public String infoPersonaggio = "/ProvaTomcat-1.0-SNAPSHOT/rest/InfoPersonaggio/";
+   public String ServerTomcat = "http://inthefootsteps.solr.netseven.it/rest";
+   public String infoPersonaggio = "/InfoPersonaggio/";
    public String endpoint = "http://data.fusepool.info:8181/sparql/select";
    
    private static Logger logger = Logger.getLogger(GetValues.class);
